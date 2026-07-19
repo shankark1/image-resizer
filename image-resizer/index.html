@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer | Fast & Modern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Phosphor Icons for modern iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container">
+        <header>
+            <h1>Image Resizer</h1>
+            <p>Resize your images instantly in the browser.</p>
+        </header>
+
+        <main>
+            <div class="upload-section" id="upload-zone">
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <div class="upload-content">
+                    <i class="ph ph-upload-simple"></i>
+                    <p>Drag & Drop your image here or <span>browse</span></p>
+                    <small>Supports JPG, PNG, WEBP</small>
+                </div>
+                <img id="preview-image" style="display: none;" alt="Preview">
+            </div>
+
+            <div class="controls-section" id="controls-section" style="display: none;">
+                <div class="dimensions-group">
+                    <div class="input-group">
+                        <label for="width">Width (px)</label>
+                        <input type="number" id="width" placeholder="e.g. 1920">
+                    </div>
+                    <button class="icon-btn" id="lock-aspect" title="Lock Aspect Ratio">
+                        <i class="ph ph-link"></i>
+                    </button>
+                    <div class="input-group">
+                        <label for="height">Height (px)</label>
+                        <input type="number" id="height" placeholder="e.g. 1080">
+                    </div>
+                </div>
+
+                <div class="quick-sizes">
+                    <label>Quick Sizes</label>
+                    <div class="chips">
+                        <button class="chip" data-width="1920" data-height="1080">1920×1080 <span>FHD</span></button>
+                        <button class="chip" data-width="1080" data-height="1080">1080×1080 <span>Square</span></button>
+                        <button class="chip" data-width="1280" data-height="720">1280×720 <span>HD</span></button>
+                        <button class="chip" data-width="800" data-height="600">800×600 <span>Web</span></button>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="download-btn" class="primary-btn">
+                        <i class="ph ph-download-simple"></i> Download Image
+                    </button>
+                    <button id="reset-btn" class="secondary-btn">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
